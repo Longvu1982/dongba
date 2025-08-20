@@ -28,7 +28,7 @@ const steps = [
 
 const Benefits = () => {
   return (
-    <div className="pt-[100px] pb-[50px]">
+    <div className="pt-[100px]">
       <div className="container mx-auto">
         <div className="grid grid-cols-2 items-center gap-10 mb-[50px]">
           <div className="space-y-8 w-4/5">
