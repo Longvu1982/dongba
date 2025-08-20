@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter, Lato, Oswald } from "next/font/google";
+import Header from "@/components/common/header";
 import "./globals.css";
 
 const interFont = Inter({
@@ -39,6 +40,7 @@ export default function RootLayout({
           "antialiased"
         )}
       >
+        <Header />
         {children}
       </body>
     </html>
