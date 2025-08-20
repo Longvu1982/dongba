@@ -2,6 +2,7 @@ import Hero from "./components/hero";
 import ProfessorsSection from "./components/professors";
 import WhoWeAre from "./components/who-we-are";
 import Promises from "./components/promises";
+import Benefits from "./components/benefits";
 
 export default async function HomeRoute() {
   return (
@@ -10,6 +11,7 @@ export default async function HomeRoute() {
       <WhoWeAre />
       <ProfessorsSection />
       <Promises />
+      <Benefits />
     </main>
   );
 }
