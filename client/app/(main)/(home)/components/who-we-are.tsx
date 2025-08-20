@@ -58,7 +58,7 @@ const WhoWeAre = () => {
 
       <div className="container mx-auto py-[50px]">
         <div className="flex items-end justify-between mb-[50px]">
-          <h2 className="text-[52px] font-medium text-neutral-900">
+          <h2 className="big-title">
             Linh Hoạt và Sáng Tạo Từ <br /> Khâu Sản Xuất
           </h2>
 

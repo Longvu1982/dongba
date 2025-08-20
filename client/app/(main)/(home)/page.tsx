@@ -1,4 +1,5 @@
 import Hero from "./components/hero";
+import ProfessorsSection from "./components/professors";
 import WhoWeAre from "./components/who-we-are";
 
 export default async function HomeRoute() {
@@ -6,6 +7,7 @@ export default async function HomeRoute() {
     <main className="">
       <Hero />
       <WhoWeAre />
+      <ProfessorsSection />
     </main>
   );
 }

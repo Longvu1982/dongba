@@ -126,3 +126,9 @@
     @apply text-sm
   }
 }
+
+@layer utilities {
+  .big-title {
+    @apply text-[52px] font-medium text-neutral-900;
+  }
+}
