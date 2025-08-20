@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Lato, Oswald } from "next/font/google";
 import Header from "@/components/common/header";
 import "./globals.css";
+import Footer from "@/components/common/footer";
 
 const interFont = Inter({
   variable: "--font-inter",
@@ -44,6 +45,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

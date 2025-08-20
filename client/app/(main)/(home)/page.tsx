@@ -4,6 +4,7 @@ import WhoWeAre from "./components/who-we-are";
 import Promises from "./components/promises";
 import Benefits from "./components/benefits";
 import CustomersFeedback from "./components/customers-feedback";
+import MarqueeSection from "./components/marquee-section";
 
 export default async function HomeRoute() {
   return (
@@ -14,6 +15,7 @@ export default async function HomeRoute() {
       <Promises />
       <Benefits />
       <CustomersFeedback />
+      <MarqueeSection />
     </main>
   );
 }

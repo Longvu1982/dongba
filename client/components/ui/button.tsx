@@ -45,11 +45,13 @@ function Button({
   wrapperClassName,
   variant = "default",
   asChild = false,
+  arrow = true,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean;
     wrapperClassName?: string;
+    arrow?: boolean;
   }) {
   const Comp = asChild ? Slot : "button";
 
@@ -66,15 +68,21 @@ function Button({
         )}
         {...props}
       />
-      {variant === "default" && (
-        <div className="flex items-center justify-center rounded-full size-9 bg-primary text-white -rotate-[45deg] group-hover:rotate-0 transition-all duration-300">
-          <ArrowRight size={16} />
-        </div>
-      )}
-      {variant === "secondary" && (
-        <div className="flex items-center justify-center rounded-full size-9 bg-white text-primary -rotate-[45deg] group-hover:rotate-0 transition-all duration-300">
-          <ArrowRight size={16} />
-        </div>
+      {arrow ? (
+        <>
+          {variant === "default" && (
+            <div className="flex items-center justify-center rounded-full size-9 bg-primary text-white -rotate-[45deg] group-hover:rotate-0 transition-all duration-300">
+              <ArrowRight size={16} />
+            </div>
+          )}
+          {variant === "secondary" && (
+            <div className="flex items-center justify-center rounded-full size-9 bg-white text-primary -rotate-[45deg] group-hover:rotate-0 transition-all duration-300">
+              <ArrowRight size={16} />
+            </div>
+          )}
+        </>
+      ) : (
+        <></>
       )}
     </div>
   );

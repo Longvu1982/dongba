@@ -21,7 +21,7 @@ export default function Header() {
             {"/"}
             <Link
               href="tel:+84355569802"
-              type="email"
+              type="phone"
               className="flex items-center gap-2"
             >
               <Phone size={20} />
