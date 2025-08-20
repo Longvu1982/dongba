@@ -62,8 +62,7 @@ const Hero = () => {
               fill
               src="/hero.png"
               alt="hero"
-              className="opacity-50"
-              objectFit="cover"
+              className="opacity-50 object-cover"
             />
           </div>
           <div className="absolute inset-0 bg-[#1D35A099]"></div>

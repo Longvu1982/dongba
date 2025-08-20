@@ -91,8 +91,10 @@ const WhoWeAre = () => {
                       fill
                       src="/who-we-are.jpg"
                       alt="who-we-are"
-                      objectFit="cover"
-                      className={cn("opacity-30", objectPositionMap[index])}
+                      className={cn(
+                        "opacity-30 object-cover",
+                        objectPositionMap[index]
+                      )}
                     />
                   </div>
                 </div>
