@@ -8,7 +8,7 @@ interface LoadingScreenProps {
 }
 
 export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(5);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -34,7 +34,7 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
             alt="logo"
             width={142 * 1.5}
             height={32 * 1.5}
-            className="mx-auto mb-4"
+            className="mx-auto mb-4 block"
           />
         </div>
 
