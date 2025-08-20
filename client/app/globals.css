@@ -129,6 +129,6 @@
 
 @layer utilities {
   .big-title {
-    @apply text-[52px] font-medium text-neutral-900;
+    @apply text-[52px] font-medium text-neutral-900 leading-14;
   }
 }

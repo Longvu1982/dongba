@@ -26,7 +26,7 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
   }, [onLoadingComplete]);
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-gradient-to-br from-primary via-blue-800 to-blue-700 flex items-center justify-center z-50">
       <div className="text-center">
         <div>
           <Image
