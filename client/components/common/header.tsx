@@ -35,7 +35,9 @@ export default function Header() {
         </div>
         <Separator className="mb-3 bg-white" />
         <div className="flex items-center justify-between px-4 h-10">
-          <Image src="/logo-white.png" alt="logo" width={142} height={32} />
+          <Link href="/">
+            <Image src="/logo-white.png" alt="logo" width={142} height={32} />
+          </Link>
           <div>
             <Link href="/" className="px-4">
               <span>Home</span>
