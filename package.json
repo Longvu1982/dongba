@@ -1,26 +1,15 @@
 {
-  "name": "dongba-landing-page",
-  "version": "1.0.0",
-  "private": true,
-  "workspaces": [
-    "client",
-    "server"
-  ],
   "scripts": {
-    "dev": "concurrently --names \"CLIENT,SERVER\" --prefix-colors \"cyan,green\" \"npm run dev:client\" \"npm run dev:server\"",
-    "dev:client": "npm run dev --workspace=client",
-    "dev:server": "npm run dev --workspace=server",
-    "build": "concurrently --names \"CLIENT,SERVER\" --prefix-colors \"cyan,green\" \"npm run build:client\" \"npm run build:server\"",
-    "build:client": "npm run build --workspace=client",
-    "build:server": "npm run build --workspace=server",
-    "start": "concurrently --names \"CLIENT,SERVER\" --prefix-colors \"cyan,green\" \"npm run start:client\" \"npm run start:server\"",
-    "start:client": "npm run start --workspace=client",
-    "start:server": "npm run start --workspace=server"
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run dev",
+
+    "dev": "concurrently -n client,server -c green,blue \"npm run client\" \"npm run server\"",
+
+    "install:all": "concurrently \"cd client && npm install\" \"cd server && npm install\"",
+    "build": "concurrently \"cd client && npm run build\" \"cd server && npm run build\"",
+    "start": "concurrently -n client,server -c green,blue \"cd client && npm start\" \"cd server && npm start\""
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
-  },
-  "engines": {
-    "node": ">=18"
+    "concurrently": "^9.0.0"
   }
 }

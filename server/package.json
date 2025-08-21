@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "stapi-test",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -15,10 +15,9 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.20.0",
-    "@strapi/plugin-users-permissions": "5.20.0",
-    "@strapi/strapi": "5.20.0",
-    "ajv": "^8.17.1",
+    "@strapi/plugin-cloud": "5.23.0",
+    "@strapi/plugin-users-permissions": "5.23.0",
+    "@strapi/strapi": "5.23.0",
     "better-sqlite3": "11.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -36,7 +35,7 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "a3642583-a617-4fca-8172-ea9f71cdbb4c",
-    "installId": "e51cae3ea32192df8d9c63617ff6d9e96c103ca909de925b8011cae807af8f17"
+    "uuid": "a97546a7-41e4-45e2-929d-ef98ab372e65",
+    "installId": "9338de86047dd055d9f3d7a05fadc7592b0b2b4b16d6ffd7759218fee35c59dc"
   }
 }
