@@ -1,9 +1,13 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Check, FastForward } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "@/lib/motion";
 
 const steps = [
   {
@@ -28,10 +32,19 @@ const steps = [
 
 const Benefits = () => {
   return (
-    <div className="pt-[100px]">
+    <motion.div
+      variants={staggerContainer(0.2, 0.2)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.1 }}
+      className="pt-[100px]"
+    >
       <div className="container mx-auto">
         <div className="grid grid-cols-2 items-center gap-10 mb-[50px]">
-          <div className="space-y-8 w-4/5">
+          <motion.div
+            variants={fadeIn("right", 0.2)}
+            className="space-y-8 w-4/5"
+          >
             <h2 className="big-title leading-14">
               Khám Phá Những <br /> Lợi Ích Khi Hợp Tác <br /> Với Chúng Tôi
             </h2>
@@ -67,21 +80,24 @@ const Benefits = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="w-full h-[600px] relative overflow-hidden rounded-md">
+          <motion.div
+            variants={fadeIn("left", 0.3)}
+            className="w-full h-[600px] relative overflow-hidden rounded-md"
+          >
             <Image
               fill
               className="object-cover"
               src="/benefit-1.jpg"
               alt="benefit-1"
             />
-          </div>
+          </motion.div>
         </div>
         <Separator className="bg-neutral-600" />
 
         <div className="grid grid-cols-2 gap-[240px] py-[50px] items-center">
-          <div className="space-y-10">
+          <motion.div variants={fadeIn("right", 0.3)} className="space-y-10">
             <h2 className="big-title leading-14">
               Từ Yêu Cầu Tới <br /> Sản Xuất - Khởi Động <br /> Dự Án Suôn Sẻ
             </h2>
@@ -97,9 +113,9 @@ const Benefits = () => {
                 alt="benefit-2"
               />
             </div>
-          </div>
+          </motion.div>
 
-          <div className="space-y-8">
+          <motion.div variants={fadeIn("left", 0.2)} className="space-y-8">
             {steps.map((step) => (
               <div key={step.id} className="flex items-start gap-5">
                 <div className="bg-secondary size-9 rounded-sm text-primary text-sm shrink-0 flex items-center justify-center">
@@ -120,10 +136,10 @@ const Benefits = () => {
                 Liên hệ chúng tôi
               </Link>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

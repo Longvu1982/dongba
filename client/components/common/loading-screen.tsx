@@ -15,10 +15,10 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
-          setTimeout(onLoadingComplete, 500); // Small delay before hiding
+          setTimeout(onLoadingComplete, 300); // Small delay before hiding
           return 100;
         }
-        return prev + 5;
+        return prev + 8;
       });
     }, 25);
 

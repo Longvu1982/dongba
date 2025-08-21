@@ -136,7 +136,9 @@ const Footer = () => {
                   <Link href="tel:+84987654321">+84 987 654 321</Link>
                 </p>
                 <p className="text-sm text-neutral-300">
-                  <Link href="mailto:info@dongba.com">info@dongba.com</Link>
+                  <Link href="mailto:dongbaco@gmail.com">
+                    dongbaco@gmail.com
+                  </Link>
                 </p>
               </div>
 

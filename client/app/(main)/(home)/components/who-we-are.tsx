@@ -1,3 +1,5 @@
+"use client";
+
 import BackGroundImage from "@/components/common/backgroun-image";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -5,6 +7,8 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "@/lib/motion";
 
 const productionsDescroptions = [
   {
@@ -31,8 +35,17 @@ const productionsDescroptions = [
 const WhoWeAre = () => {
   return (
     <div className="pt-[100px] pb-[50px]">
-      <div className="container mx-auto grid grid-cols-2">
-        <div className="flex flex-col justify-center gap-6">
+      <motion.div
+        variants={staggerContainer(0.2, 0.2)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className="container mx-auto grid grid-cols-2"
+      >
+        <motion.div
+          variants={fadeIn("right", 0.1)}
+          className="flex flex-col justify-center gap-6"
+        >
           <h3 className="text-primary uppercase font-semibold text-sm tracking-wide">
             / Chúng tôi là ai /
           </h3>
@@ -46,23 +59,32 @@ const WhoWeAre = () => {
           <Button className="" variant="outline">
             <Link href="/about">Lịch sử chúng tôi</Link>
           </Button>
-        </div>
-        <BackGroundImage
-          url="/who-we-are.jpg"
-          alt="who-we-are"
-          aspectRatio="1.5"
-          overlay={false}
-        />
-      </div>
+        </motion.div>
+        <motion.div variants={fadeIn("left", 0.1)}>
+          <BackGroundImage
+            url="/who-we-are.jpg"
+            alt="who-we-are"
+            aspectRatio="1.5"
+            overlay={false}
+          />
+        </motion.div>
+      </motion.div>
       <Separator className="container mx-auto mt-[50px] bg-neutral-600" />
 
-      <div className="container mx-auto py-[50px]">
+      <motion.div
+        variants={staggerContainer(0.2, 0.2)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25, margin: "0px 0px -100px 0px" }}
+        className="container mx-auto py-[50px]"
+      >
         <div className="flex items-end justify-between mb-[50px]">
-          <h2 className="big-title">
+          <motion.h2 variants={fadeIn("right", 0.1)} className="big-title">
             Linh Hoạt và Sáng Tạo Từ <br /> Khâu Sản Xuất
-          </h2>
-
-          <Button>SẢN PHẨM CHÚNG TÔI</Button>
+          </motion.h2>
+          <motion.div variants={fadeIn("left", 0.1)}>
+            <Button>SẢN PHẨM CHÚNG TÔI</Button>
+          </motion.div>
         </div>
 
         <div>
@@ -74,7 +96,10 @@ const WhoWeAre = () => {
             ];
 
             return (
-              <div key={item.id}>
+              <motion.div
+                variants={fadeIn("down", 0.3 + index * 0.1)}
+                key={item.id}
+              >
                 <div className="grid grid-cols-14 items-center gap-x-10 px-9 py-8 relative overflow-hidden group">
                   <p className="col-span-2 text-xl font-semibold text-neutral-900 group-hover:text-neutral-50 transition-all duration-200">
                     / 0{item.id} /
@@ -101,11 +126,11 @@ const WhoWeAre = () => {
                 {index !== productionsDescroptions.length - 1 && (
                   <Separator className="container mx-auto bg-neutral-600" />
                 )}
-              </div>
+              </motion.div>
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,5 +1,8 @@
+"use client";
+import { fadeIn, staggerContainer } from "@/lib/motion";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 const cards = [
   {
@@ -24,7 +27,13 @@ const cards = [
 
 const Promises = () => {
   return (
-    <div className="relative py-[100px]">
+    <motion.div
+      variants={staggerContainer(0.2, 0.2)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className="relative py-[100px]"
+    >
       <div className="absolute inset-0 -z-1 bg-[#0C2389ee]"></div>
       <div className="absolute inset-0 -z-1">
         <Image
@@ -36,13 +45,20 @@ const Promises = () => {
       </div>
 
       <div className="container mx-auto text-white">
-        <p className="uppercase mb-3">/ CHẤT LƯỢNG /</p>
-        <h2 className="text-[52px] font-medium w-3/5 mb-[100px] leading-14">
-          Cam Kết Của Chúng Tôi Về Sự Xuất Sắc Trong Sản Xuất
-        </h2>
+        <motion.div variants={fadeIn("down", 0.2)}>
+          <p className="uppercase mb-3">/ CHẤT LƯỢNG /</p>
+          <h2 className="text-[52px] font-medium w-3/5 mb-[100px] leading-14">
+            Cam Kết Của Chúng Tôi Về Sự Xuất Sắc Trong Sản Xuất
+          </h2>
+        </motion.div>
+
         <div className="grid grid-cols-3 gap-8">
-          {cards.map((item) => (
-            <div key={item.imgUrl} className="space-y-4">
+          {cards.map((item, index) => (
+            <motion.div
+              variants={fadeIn("down", 0.2 + index * 0.1)}
+              key={item.imgUrl}
+              className="space-y-4"
+            >
               <div className="w-full aspect-[1.8] relative overflow-hidden">
                 <Image
                   src={item.imgUrl}
@@ -53,11 +69,11 @@ const Promises = () => {
               </div>
               <h3 className="text-[20px] font-semibold">{item.title}</h3>
               <p className="text-neutral-200 text-base">{item.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,9 +1,13 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Linkedin, Network } from "lucide-react";
+import { Network } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "@/lib/motion";
 
 const professorsList = [
   [{}, {}, {}],
@@ -12,19 +16,30 @@ const professorsList = [
 
 const ProfessorsSection = () => {
   return (
-    <div className="bg-secondary py-[50px]">
+    <motion.div
+      variants={staggerContainer(0.2, 0.2)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className="bg-secondary py-[50px]"
+    >
       <div className="container mx-auto">
-        <h2 className="text-primary uppercase tracking-wide font-semibold text-center mb-3">
-          / Đội ngũ lãnh đạo /
-        </h2>
-        <h3 className="big-title text-center mb-5">
-          Chuyên Gia Xuất Sắc Trong ngành
-        </h3>
-        <p className="font-inter text-neutral-900 text-center text-base">
-          Gặp gỡ những cá nhân tài nằng đứng sau thành công của chúng tôi.
-        </p>
+        <motion.div variants={fadeIn("up", 0.2)}>
+          <h2 className="text-primary uppercase tracking-wide font-semibold text-center mb-3">
+            / Đội ngũ lãnh đạo /
+          </h2>
+          <h3 className="big-title text-center mb-5">
+            Chuyên Gia Xuất Sắc Trong ngành
+          </h3>
+          <p className="font-inter text-neutral-900 text-center text-base">
+            Gặp gỡ những cá nhân tài nằng đứng sau thành công của chúng tôi.
+          </p>
+        </motion.div>
 
-        <div className="flex flex-col justify-center my-20">
+        <motion.div
+          variants={fadeIn("up", 0.3)}
+          className="flex flex-col justify-center my-20"
+        >
           {professorsList.map((chunk, index) => (
             <div
               key={index}
@@ -37,9 +52,12 @@ const ProfessorsSection = () => {
               ))}
             </div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="space-y-6 flex flex-col items-center">
+        <motion.div
+          variants={fadeIn("up", 0.4)}
+          className="space-y-6 flex flex-col items-center"
+        >
           <h3 className="big-title text-center text-[44px]!">
             Chúng tôi đang tuyển dụng!
           </h3>
@@ -50,9 +68,9 @@ const ProfessorsSection = () => {
           <Button variant={"outline"}>
             <Link href="#">Vị trí đang mở</Link>
           </Button>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
